@@ -1,5 +1,3 @@
-# Employee_Salary_Prediction
-Employee Salary Predictor using Machine Learning and demonstration using Streamlit App
 📊 Employee Salary Prediction Model
 This repository contains a machine learning project focused on predicting employee salaries based on various demographic and professional attributes. The project includes a comprehensive Jupyter Notebook for data analysis, model training, and evaluation, along with a Streamlit web application for interactive salary prediction.
 
