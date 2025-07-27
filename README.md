@@ -1,67 +1,50 @@
-📊 Employee Salary Prediction Model
+# 📊 Employee Salary Prediction Model
+
 This repository contains a machine learning project focused on predicting employee salaries based on various demographic and professional attributes. The project includes a comprehensive Jupyter Notebook for data analysis, model training, and evaluation, along with a Streamlit web application for interactive salary prediction.
 
-✨ Project Overview
+## ✨ Project Overview
+
 The aim of this project is to develop a robust machine learning model that can accurately predict an individual's salary. This tool can be valuable for HR professionals in setting competitive compensation, and for job seekers to understand their market value. The model considers factors such as age, gender, education level, job title, and years of experience.
 
-🚀 Features
-Data Cleaning & Preprocessing: Handles missing values, duplicate entries, and standardizes categorical features.
+## 🚀 Features
 
-High Cardinality Handling: Implements a strategy to manage 'Job Title' categories by grouping less frequent ones into 'Other'.
+* **Data Cleaning & Preprocessing:** Handles missing values, duplicate entries, and standardizes categorical features.
+* **High Cardinality Handling:** Implements a strategy to manage 'Job Title' categories by grouping less frequent ones into 'Other'.
+* **Outlier Detection & Removal:** Uses the Interquartile Range (IQR) method to ensure robust model training.
+* **Feature Scaling & Encoding:** Applies `StandardScaler` for numerical features and `OneHotEncoder` for categorical features using `ColumnTransformer`.
+* **Multiple Model Training:** Explores various regression algorithms including Linear Regression, Decision Tree, Random Forest, and Gradient Boosting.
+* **Model Evaluation:** Comprehensive evaluation using metrics like MAE, MSE, RMSE, and R-squared.
+* **Hyperparameter Tuning:** Optimizes the best-performing model (Random Forest) using `GridSearchCV`.
+* **Model Persistence:** Saves the trained model and preprocessor for easy deployment.
+* **Interactive Web Application:** A user-friendly Streamlit app for real-time salary predictions.
+* **Input Validation:** Ensures logical consistency between Age and Years of Experience in the web app.
 
-Outlier Detection & Removal: Uses the Interquartile Range (IQR) method to ensure robust model training.
+## 💾 Data Source
 
-Feature Scaling & Encoding: Applies StandardScaler for numerical features and OneHotEncoder for categorical features using ColumnTransformer.
+The project utilizes `dataset01.csv`, which contains employee data including:
+* `Age`
+* `Gender`
+* `Education Level`
+* `Job Title`
+* `Years of Experience`
+* `Salary` (Target variable, assumed to be **Monthly Indian Rupees (₹)** based on analysis and project context).
 
-Multiple Model Training: Explores various regression algorithms including Linear Regression, Decision Tree, Random Forest, and Gradient Boosting.
+## 🛠️ Technologies Used
 
-Model Evaluation: Comprehensive evaluation using metrics like MAE, MSE, RMSE, and R-squared.
+* **Python 3.8+**
+* **Jupyter Notebook:** For development and analysis.
+* **Streamlit:** For building the interactive web application.
+* **Core Libraries:**
+    * `pandas`
+    * `numpy`
+    * `matplotlib`
+    * `seaborn`
+    * `scikit-learn`
+    * `joblib`
 
-Hyperparameter Tuning: Optimizes the best-performing model (Random Forest) using GridSearchCV.
+## 📂 Project Structure
 
-Model Persistence: Saves the trained model and preprocessor for easy deployment.
-
-Interactive Web Application: A user-friendly Streamlit app for real-time salary predictions.
-
-Input Validation: Ensures logical consistency between Age and Years of Experience in the web app.
-
-💾 Data Source
-The project utilizes dataset01.csv, which contains employee data including:
-
-Age
-
-Gender
-
-Education Level
-
-Job Title
-
-Years of Experience
-
-Salary (Target variable, assumed to be Monthly Indian Rupees (₹) based on analysis and project context).
-
-🛠️ Technologies Used
-Python 3.8+
-
-Jupyter Notebook: For development and analysis.
-
-Streamlit: For building the interactive web application.
-
-Core Libraries:
-
-pandas
-
-numpy
-
-matplotlib
-
-seaborn
-
-scikit-learn
-
-joblib
-
-📂 Project Structure
+```
 .
 ├── dataset01.csv             # Original dataset
 ├── Untitled.ipynb            # Jupyter Notebook for data analysis, model training, and evaluation
@@ -69,89 +52,87 @@ joblib
 ├── model.joblib              # Trained machine learning model (RandomForestRegressor)
 ├── preprocessor.joblib       # Trained ColumnTransformer for data preprocessing
 └── README.md                 # Project README file (this file)
+```
 
-⚙️ Installation & Setup
-Clone the Repository:
+## ⚙️ Installation & Setup
 
-git clone https://github.com/anshgraphic/Employee_Salary_Prediction.git
-cd Employee_Salary_Prediction
+1.  **Clone the Repository:**
+    ```bash
+    git clone https://github.com/anshgraphic/Employee_Salary_Prediction.git
+    cd Employee_Salary_Prediction
+    ```
 
-Create a Virtual Environment (Recommended):
+2.  **Create a Virtual Environment (Recommended):**
+    ```bash
+    python -m venv venv
+    # On Windows:
+    .\venv\Scripts\activate
+    # On macOS/Linux:
+    source venv/bin/activate
+    ```
 
-python -m venv venv
-# On Windows:
-.\venv\Scripts\activate
-# On macOS/Linux:
-source venv/bin/activate
+3.  **Install Dependencies:**
+    ```bash
+    pip install pandas numpy matplotlib seaborn scikit-learn joblib streamlit nltk
+    ```
 
-Install Dependencies:
+## 🚀 How to Run the Project
 
-pip install pandas numpy matplotlib seaborn scikit-learn joblib streamlit nltk
+### 1. Run the Jupyter Notebook
 
-🚀 How to Run the Project
-1. Run the Jupyter Notebook
-The Untitled.ipynb notebook contains all the steps for data loading, cleaning, preprocessing, EDA, model training, and evaluation.
+The `Untitled.ipynb` notebook contains all the steps for data loading, cleaning, preprocessing, EDA, model training, and evaluation.
 
-Launch Jupyter Notebook:
+* **Launch Jupyter Notebook:**
+    ```bash
+    jupyter notebook
+    ```
+* Open `Untitled.ipynb` in your browser.
+* **Run all cells from top to bottom.** This will:
+    * Process the data.
+    * Train the machine learning model.
+    * Save `model.joblib` (the trained Random Forest model) and `preprocessor.joblib` (the trained `ColumnTransformer`) in the same directory. **These files are essential for the Streamlit app.**
 
-jupyter notebook
+### 2. Run the Streamlit Web Application
 
-Open Untitled.ipynb in your browser.
+Once `model.joblib` and `preprocessor.joblib` are generated by the Jupyter Notebook, you can run the Streamlit app.
 
-Run all cells from top to bottom. This will:
+* **Ensure you are in the `Employee_Salary_Prediction` directory** in your terminal (where `try.py`, `model.joblib`, and `preprocessor.joblib` are located).
+* **Execute the Streamlit app:**
+    ```bash
+    streamlit run try.py
+    ```
+* The application will open in your default web browser (usually at `http://localhost:8501`).
 
-Process the data.
+## 📈 Model Performance
 
-Train the machine learning model.
+The project's best model, the **Tuned Random Forest Regressor**, achieved strong performance metrics.
 
-Save model.joblib (the trained Random Forest model) and preprocessor.joblib (the trained ColumnTransformer) in the same directory. These files are essential for the Streamlit app.
+* **R-squared ($R^2$):** [Insert your best R-squared value here, e.g., `0.9523`]
+* **Root Mean Squared Error (RMSE):** [Insert your best RMSE value here, e.g., `₹15,000`]
+* **Mean Absolute Error (MAE):** [Insert your best MAE value here, e.g., `₹10,000`]
 
-2. Run the Streamlit Web Application
-Once model.joblib and preprocessor.joblib are generated by the Jupyter Notebook, you can run the Streamlit app.
+*(These values should be copied from the output of your Jupyter Notebook's evaluation cell.)*
 
-Ensure you are in the Employee_Salary_Prediction directory in your terminal (where try.py, model.joblib, and preprocessor.joblib are located).
+## 💡 Key Findings & Insights
 
-Execute the Streamlit app:
+* Years of Experience and Job Title are typically strong predictors of salary.
+* Effective handling of categorical features and outliers significantly improves model accuracy.
+* The Random Forest algorithm's ensemble nature allows it to capture complex, non-linear relationships in the data.
+* The Streamlit app provides an intuitive way to demonstrate the model's capabilities and allows for quick salary estimations based on user inputs.
 
-streamlit run try.py
+## 🔮 Future Enhancements
 
-The application will open in your default web browser (usually at http://localhost:8501).
+* **Data Enrichment:** Incorporate more features like **location**, **company size/type**, **specific skills**, and **industry**.
+* **Advanced Models:** Explore **XGBoost**, **LightGBM**, or deep learning approaches for potential accuracy gains.
+* **Model Interpretability:** Implement SHAP or LIME to provide explanations for individual salary predictions.
+* **Continuous Integration/Deployment (CI/CD):** Set up automated pipelines for model retraining and app deployment.
+* **User Feedback Loop:** Add functionality to collect user feedback on predictions to continuously improve the model.
 
-📈 Model Performance
-The project's best model, the Tuned Random Forest Regressor, achieved strong performance metrics.
+---
 
-R-squared (R 
-2
- ): [Insert your best R-squared value here, e.g., 0.9523]
+## 📧 Contact
 
-Root Mean Squared Error (RMSE): [Insert your best RMSE value here, e.g., ₹15,000]
-
-Mean Absolute Error (MAE): [Insert your best MAE value here, e.g., ₹10,000]
-
-(These values should be copied from the output of your Jupyter Notebook's evaluation cell.)
-
-💡 Key Findings & Insights
-Years of Experience and Job Title are typically strong predictors of salary.
-
-Effective handling of categorical features and outliers significantly improves model accuracy.
-
-The Random Forest algorithm's ensemble nature allows it to capture complex, non-linear relationships in the data.
-
-The Streamlit app provides an intuitive way to demonstrate the model's capabilities and allows for quick salary estimations based on user inputs.
-
-🔮 Future Enhancements
-Data Enrichment: Incorporate more features like location, company size/type, specific skills, and industry.
-
-Advanced Models: Explore XGBoost, LightGBM, or deep learning approaches for potential accuracy gains.
-
-Model Interpretability: Implement SHAP or LIME to provide explanations for individual salary predictions.
-
-Continuous Integration/Deployment (CI/CD): Set up automated pipelines for model retraining and app deployment.
-
-User Feedback Loop: Add functionality to collect user feedback on predictions to continuously improve the model.
-
-📧 Contact
 For any questions or collaborations, feel free to reach out.
 
-[Your Name]
-[Your GitHub Profile Link, e.g., https://github.com/anshgraphic]
+**[Your Name]**
+**[Your GitHub Profile Link, e.g., [https://github.com/anshgraphic](https://github.com/anshgraphic)]**
