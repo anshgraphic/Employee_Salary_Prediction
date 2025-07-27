@@ -90,7 +90,7 @@ pip install pandas numpy matplotlib seaborn scikit-learn joblib streamlit nltk
 
 🚀 How to Run the Project
 1. Run the Jupyter Notebook
-The Untitled.ipynb notebook contains all the steps for data loading, cleaning, preprocessing, EDA, model training, evaluation, and saving the model and preprocessor.
+The Untitled.ipynb notebook contains all the steps for data loading, cleaning, preprocessing, EDA, model training, and evaluation.
 
 Launch Jupyter Notebook:
 
