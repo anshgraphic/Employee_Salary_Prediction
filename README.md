@@ -111,7 +111,6 @@ The project's best model, the **Tuned Random Forest Regressor**, achieved strong
 * **Root Mean Squared Error (RMSE):** [Insert your best RMSE value here, e.g., `₹15,000`]
 * **Mean Absolute Error (MAE):** [Insert your best MAE value here, e.g., `₹10,000`]
 
-*(These values should be copied from the output of your Jupyter Notebook's evaluation cell.)*
 
 ## 💡 Key Findings & Insights
 
