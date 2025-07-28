@@ -130,7 +130,4 @@ The project's best model, the **Tuned Random Forest Regressor**, achieved strong
 
 ## 📧 Contact
 
-For any questions or collaborations, feel free to reach out.
-
-**[Your Name]**
-**[Your GitHub Profile Link, e.g., [https://github.com/anshgraphic](https://github.com/anshgraphic)]**
+https://github.com/anshgraphic](https://github.com/anshgraphic
