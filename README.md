@@ -125,9 +125,4 @@ The project's best model, the **Tuned Random Forest Regressor**, achieved strong
 * **Model Interpretability:** Implement SHAP or LIME to provide explanations for individual salary predictions.
 * **Continuous Integration/Deployment (CI/CD):** Set up automated pipelines for model retraining and app deployment.
 * **User Feedback Loop:** Add functionality to collect user feedback on predictions to continuously improve the model.
-
----
-
-## 📧 Contact
-
-https://github.com/anshgraphic](https://github.com/anshgraphic
+  
